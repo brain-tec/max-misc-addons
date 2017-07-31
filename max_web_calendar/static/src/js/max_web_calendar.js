@@ -205,6 +205,7 @@ odoo.define('max_web_calendar', function (require) {
                 'start': moment(date_start).format('YYYY-MM-DD HH:mm:ss'),
                 'end': moment(date_stop).format('YYYY-MM-DD HH:mm:ss'),
                 'title': the_title,
+                'attendee_avatars': the_title_avatar,
                 'allDay': (this.fields[this.date_start].type == 'date' || (this.all_day && evt[this.all_day]) || false),
                 'id': evt.id,
                 'attendees':attendees
