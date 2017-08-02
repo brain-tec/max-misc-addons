@@ -3,7 +3,7 @@
     'name': "Web Select List View Column",
 
     'summary': """
-        To enable user customizing (hide or show) list view columns, also the configuration can be saved and reset.
+        To enable user customizing (hide or show) list view columns.
     """,
 
     'description': """
