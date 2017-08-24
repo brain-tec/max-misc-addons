@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="max_mail_channel_moderator assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/max_mail_channel_moderator/static/src/js/max_mail_channel_moderator.js"></script>
+            </xpath>
+        </template>
+
+        <record id="mail_channel_partner_view_tree" model="ir.ui.view">
+            <field name="name">mail.channel.partner.tree</field>
+            <field name="model">mail.channel.partner</field>
+            <field name="inherit_id" ref="mail.mail_channel_partner_view_tree"/>
+            <field name="arch" type="xml">
+                <field name="channel_id" position="after">
+                    <field name="is_moderator"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="mail_channel_partner_view_form" model="ir.ui.view">
+            <field name="name">mail.channel.partner.form</field>
+            <field name="model">mail.channel.partner</field>
+            <field name="inherit_id" ref="mail.mail_channel_partner_view_form"/>
+            <field name="arch" type="xml">
+                <field name="channel_id" position="after">
+                    <field name="is_moderator"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="mail_channel_view_kanban" model="ir.ui.view">
+            <field name="name">mail.channel.kanban</field>
+            <field name="model">mail.channel</field>
+            <field name="inherit_id" ref="mail.mail_channel_view_kanban"/>
+            <field name="arch" type="xml">
+                <field name="description" position="after">
+                    <field name="channel_type"/>
+                </field>
+                <xpath expr="//div[contains(@class, 'oe_module_desc')]/p[contains(@class, 'oe_module_name')]" position="after">
+                    <div>
+                        <field name="channel_type"/>
+                    </div>
+                    <div>
+                        <field name="public"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mail_channel_view_tree" model="ir.ui.view">
+            <field name="name">mail.channel.tree</field>
+            <field name="model">mail.channel</field>
+            <field name="inherit_id" ref="mail.mail_channel_view_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="channel_type"/>
+                    <field name="public"/>
+                    <field name="follow_by_moderator"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="mail_channel_view_form" model="ir.ui.view">
+            <field name="name">mail.channel.form</field>
+            <field name="model">mail.channel</field>
+            <field name="inherit_id" ref="mail.mail_channel_view_form"/>
+            <field name="arch" type="xml">
+                <field name="public" position="before">
+                    <field name="id" invisible="1"/>
+                </field>
+                <field name="public" position="replace">
+                    <field name="public" widget="radio" string="Who can follow the group's activities?" attrs="{'readonly': [('id','!=',False)]}"/>
+                </field>
+                <field name="group_ids" position="after">
+                    <field name="follow_by_moderator"/>
+                </field>
+                <xpath expr="//notebook/page[last()]" position="after">
+                     <page string="Moderators">
+                        <field name="channel_partner_setting_ids" mode="tree" context="{'default_channel_id': active_id}">
+                            <tree create="false">
+                                <field name="partner_id"/>
+                                <field name="is_moderator"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
