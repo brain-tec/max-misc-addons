@@ -3,12 +3,12 @@
     'name': "Mail Channel Moderator",
 
     'summary': """
-        Manage the creation of 'public/groups' channels, the Mail Channel Moderator controls new member joining and the 
-        channel editing.
+        Mail Channel Moderator and Public Channel Manager.
     """,
 
     'description': """
-        Mail Channel Moderator and Public Channel Manager.
+        Manage the creation of 'public/groups' channels, the Mail Channel Moderator controls new member joining and the 
+        channel editing.       
     """,
 
     'author': "MAXodoo",
