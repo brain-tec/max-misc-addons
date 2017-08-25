@@ -20,7 +20,7 @@
         'views/max_mail_channel_moderator_view.xml',
         'security/security.xml',
     ],
-    'qweb': [],
+    'qweb': ['static/src/xml/max_mail_channel_moderator.xml'],
     'installable': True,
     'application': False,
     'auto_install': False,

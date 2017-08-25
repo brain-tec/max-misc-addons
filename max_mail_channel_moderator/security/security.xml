@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <odoo>
     <data>
-        <!--频道管理员-->
+        <!--Define Channel Manager-->
         <record model="res.groups" id="mail.group_channel_manager">
             <field name="name">Channel Manager</field>
             <field name="category_id" ref="base.module_category_discuss"/>
             <field name="users" eval="[(4, ref('base.user_root'))]"/>
         </record>
 
-        <!--普通用户仅能创建、修改：“私有”频道-->
+        <!--A user can only create private channel-->
         <record id="mail_public_channel_rule" model="ir.rule">
             <field name="name">Mail.channel: restrict to create public channel</field>
             <field name="model_id" ref="model_mail_channel"/>
@@ -20,7 +20,7 @@
             <field name="perm_write" eval="True"/>
         </record>
 
-        <!--频道管理员用户能创建、修改全部频道-->
+        <!--A channel manager can create public/groups channel-->
         <record id="mail_public_channel_create_rule" model="ir.rule">
             <field name="name">Mail.channel: the channel manager can create any types of channels</field>
             <field name="model_id" ref="model_mail_channel"/>

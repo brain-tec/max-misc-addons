@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-extend="mail.chat.SidebarTitle">
+        <t t-jquery="h4" t-operation="before">
+            <t t-if="channel_type == 'public'">
+                <t t-set="channel_title">Public Channels</t>
+            </t>
+        </t>
+    </t>
+</templates>
+
+
+

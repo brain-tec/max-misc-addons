@@ -24,22 +24,22 @@ msgstr "<div class=\"o_mail_notification\">已加入 <a href=\"#\" class=\"o_cha
 #. module: max_mail_channel_moderator
 #: model:ir.model,name:max_mail_channel_moderator.model_mail_channel
 msgid "Discussion channel"
-msgstr "讨论频道"
+msgstr "讨论群"
 
 #. module: max_mail_channel_moderator
 #: model:ir.model.fields,field_description:max_mail_channel_moderator.field_mail_channel_follow_by_moderator
 msgid "Follow by Moderator"
-msgstr "由版主添加成员"
+msgstr "由群主添加成员"
 
 #. module: max_mail_channel_moderator
 #: model:ir.model.fields,field_description:max_mail_channel_moderator.field_mail_channel_partner_is_moderator
 msgid "Is Moderator"
-msgstr "主持人"
+msgstr "群主"
 
 #. module: max_mail_channel_moderator
 #: model:ir.ui.view,arch_db:max_mail_channel_moderator.mail_channel_view_form
 msgid "Moderators"
-msgstr "主持人"
+msgstr "群主"
 
 #. module: max_mail_channel_moderator
 #: model:ir.model.fields,field_description:max_mail_channel_moderator.field_mail_channel_channel_partner_setting_ids
@@ -50,10 +50,209 @@ msgstr "成员设置"
 #: code:addons/max_mail_channel_moderator/models/models.py:95
 #, python-format
 msgid "Permission Denied: Please contact the channel moderator."
-msgstr "权限不足: 请联系频道主持人。"
+msgstr "权限不足: 请联系群主。"
 
 #. module: max_mail_channel_moderator
 #: model:ir.ui.view,arch_db:max_mail_channel_moderator.mail_channel_view_form
 msgid "Who can follow the group's activities?"
-msgstr "谁能加入频道?"
+msgstr "谁能加入群?"
 
+#. module: mail
+#: code:addons/mail/models/mail_channel.py:639
+#, python-format
+msgid " This channel is private. People must be invited to join it."
+msgstr "这个群是私有的. 只有被邀请的人才可以参与."
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/followers.xml:65
+#, python-format
+msgid "Add Channels"
+msgstr "添加群"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/followers.xml:62
+#: model:ir.ui.view,arch_db:mail.mail_wizard_invite_form
+#, python-format
+msgid "Add Followers"
+msgstr "添加群成员"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/client_action.xml:39
+#: code:addons/mail/static/src/xml/client_action.xml:56
+#, python-format
+msgid "Add a channel"
+msgstr "添加群"
+
+#. module: mail
+#: model:ir.ui.view,arch_db:mail.mail_wizard_invite_form
+msgid "Add channels to notify..."
+msgstr "添加群到通知中  ..."
+
+#. module: mail
+#: model:ir.model.fields,field_description:mail.field_mail_channel_partner_channel_id
+#: model:ir.ui.view,arch_db:mail.mail_channel_partner_view_form
+#: selection:mail.channel,channel_type:0
+msgid "Channel"
+msgstr "群"
+
+#. module: mail
+#: model:ir.model.fields,field_description:mail.field_mail_channel_channel_type
+msgid "Channel Type"
+msgstr "群类型"
+
+#. module: mail
+#: model:ir.model.fields,field_description:mail.field_mail_channel_channel_message_ids
+msgid "Channel message ids"
+msgstr "群消息IDs"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/client_action.xml:35
+#: code:addons/mail/static/src/xml/client_action.xml:133
+#: code:addons/mail/static/src/xml/systray.xml:22
+#: model:ir.model.fields,field_description:mail.field_mail_compose_message_channel_ids
+#: model:ir.model.fields,field_description:mail.field_mail_mail_channel_ids
+#: model:ir.model.fields,field_description:mail.field_mail_message_channel_ids
+#: model:ir.model.fields,field_description:mail.field_mail_wizard_invite_channel_ids
+#: model:ir.model.fields,field_description:mail.field_res_partner_channel_ids
+#: model:ir.model.fields,field_description:mail.field_res_users_channel_ids
+#: model:ir.model.fields,field_description:mail.field_survey_mail_compose_message_channel_ids
+#: model:ir.ui.menu,name:mail.mail_channel_menu_settings
+#: model:ir.ui.view,arch_db:mail.mail_channel_partner_view_tree
+#, python-format
+msgid "Channels"
+msgstr "群"
+
+#. module: mail
+#: model:ir.actions.act_window,name:mail.mail_channel_partner_action
+#: model:ir.ui.menu,name:mail.mail_channel_partner_menu
+msgid "Channels/Partner"
+msgstr "群/业务伙伴"
+
+#. module: mail
+#: model:ir.model,name:mail.model_mail_channel
+msgid "Discussion channel"
+msgstr "讨论群"
+
+#. module: mail
+#: sql_constraint:mail.followers:0
+msgid "Error, a channel cannot follow twice the same object."
+msgstr "错误，群不能关注同一个对象两次。"
+
+#. module: mail
+#: sql_constraint:mail.followers:0
+msgid ""
+"Error: A follower must be either a partner or a channel (but not both)."
+msgstr "错误：关注者必须是业务伙伴或者群(但不是同时两者)"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/models/mail_channel.py:652
+#: code:addons/mail/static/src/xml/client_action.xml:101
+#, python-format
+msgid "Leave this channel"
+msgstr "退出此群"
+
+#. module: mail
+#: code:addons/mail/models/mail_channel.py:663
+#, python-format
+msgid "List users in the current channel"
+msgstr "在当前群列出用户"
+
+#. module: mail
+#: model:ir.ui.view,arch_db:mail.mail_channel_view_form
+msgid "Mail Channel Form"
+msgstr "邮件群表单"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/client_action.xml:138
+#, python-format
+msgid "Open channel settings"
+msgstr "打开群设定"
+
+#. module: mail
+#: model:ir.model.fields,help:mail.field_mail_alias_alias_contact
+#: model:ir.model.fields,help:mail.field_mail_alias_mixin_alias_contact
+#: model:ir.model.fields,help:mail.field_mail_channel_alias_contact
+#: model:ir.model.fields,help:mail.field_res_users_alias_contact
+msgid ""
+"Policy to post a message on the document using the mailgateway.\n"
+"- everyone: everyone can post\n"
+"- partners: only authenticated partners\n"
+"- followers: only followers of the related document or members of following channels\n"
+msgstr ""
+"策略是通过邮件网关在文档上提交一个消息\n"
+"- everyone: 任何人都可以提交\n"
+"- partners: 仅认证过的合作伙伴\n"
+"- followers: 仅相关文件的关注着或下列关注群的成员\n"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/client_action.xml:53
+#, python-format
+msgid "Private Channels"
+msgstr "私有群"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/js/client_action.js:138
+#, python-format
+msgid "Public Channels"
+msgstr "公共群"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/client_action.xml:133
+#, python-format
+msgid "Toggle Channels"
+msgstr "切换群"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/client_action.xml:137
+#, python-format
+msgid "Unsubscribe"
+msgstr "退群"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/client_action.xml:137
+#, python-format
+msgid "Unsubscribe from channel"
+msgstr "退出此群"
+
+#. module: mail
+#: code:addons/mail/models/mail_channel.py:676
+#, python-format
+msgid "Users in this channel: %s %s and you."
+msgstr "在此群的用户 : %s %s 和你."
+
+#. module: mail
+#: code:addons/mail/models/mail_channel.py:673
+#, python-format
+msgid "You are alone in this channel."
+msgstr "你是此群的唯一人员"
+
+#. module: mail
+#: code:addons/mail/models/mail_channel.py:637
+#, python-format
+msgid "You are in channel <b>#%s</b>."
+msgstr "你在群 <b>#%s</b>."
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/js/chat_manager.js:514
+#, python-format
+msgid "You unsubscribed from <b>%s</b>."
+msgstr "你已从<b>%s</b>退出。"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/client_action.xml:137
+#, python-format
+msgid "Unsubscribe"
+msgstr "退出"
