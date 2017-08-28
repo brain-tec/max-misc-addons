@@ -154,7 +154,7 @@ msgstr "错误：关注者必须是业务伙伴或者群(但不是同时两者)"
 #: code:addons/mail/static/src/xml/client_action.xml:101
 #, python-format
 msgid "Leave this channel"
-msgstr "退出此群"
+msgstr "退出这个群"
 
 #. module: mail
 #: code:addons/mail/models/mail_channel.py:663
@@ -256,3 +256,99 @@ msgstr "你已从<b>%s</b>退出。"
 #, python-format
 msgid "Unsubscribe"
 msgstr "退出"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/js/chat_manager.js:1033
+#: code:addons/mail/static/src/xml/client_action.xml:28
+#, python-format
+msgid "Starred"
+msgstr "收藏"
+
+#. module: mail
+#. openerp-web
+#: model:ir.model.fields,field_description:mail.field_mail_compose_message_starred
+#: model:ir.model.fields,field_description:mail.field_mail_mail_starred
+#: model:ir.model.fields,field_description:mail.field_mail_message_starred
+#: model:ir.model.fields,field_description:mail.field_survey_mail_compose_message_starred
+#, python-format
+msgid "Starred"
+msgstr "已收藏"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/thread.xml:68
+#: code:addons/mail/static/src/xml/thread.xml:115
+#, python-format
+msgid "Mark as Todo"
+msgstr "标记为收藏"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/thread.xml:28
+#, python-format
+msgid "No starred message"
+msgstr "没有收藏的消息"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/thread.xml:29
+#, python-format
+msgid ""
+"You can mark any message as 'starred', and it shows up in this channel."
+msgstr ""
+"你可以给任何消息加星号，然后它就会显示在这里。"
+
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/js/tour.js:15
+#, python-format
+msgid ""
+"<p><b>Write a message</b> to the members of the channel here.</p> <p>You can"
+" notify someone with <i>'@'</i> or link another channel with <i>'#'</i>. "
+"Start your message with <i>'/'</i> to get the list of possible commands.</p>"
+msgstr ""
+"<p>在这里<b>写消息</b>发给群成员。</p> <p>你可以使用'英文的'"
+" <i>'@'</i> 特别通知某人 或者使用'英文的' <i>'#'</i> 连接其他群，"
+"在消息的开头使用'英文的' <i>'/'</i> 查看可以使用的命令。</p>"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/js/tour.js:20
+#, python-format
+msgid "Messages can be <b>starred</b> to remind you to check back later."
+msgstr "消息可以 <b>标星收藏</b> 以提醒你稍后查阅。"
+
+#. module: mail
+#: code:addons/mail/models/mail_channel.py:643
+#, python-format
+msgid ""
+"<br><br>\n"
+"            You can mention someone by typing <b>@username</b>, this will grab its attention.<br>\n"
+"            You can mention a channel by typing <b>#channel</b>.<br>\n"
+"            You can execute a command by typing <b>/command</b>.<br>\n"
+"            You can insert canned responses in your message by typing <b>:shortcut</b>.<br>"
+msgstr ""
+"<br><br>\n"
+"            您可以提醒某人，使用 <b>@用户名</b>， 这样可以引起他的注意。<br>\n"
+"            您可以提醒某个群，使用 <b>#群名</b>。<br>\n"
+"            您可以执行命令，使用 <b>/命令</b>。<br>\n"
+"            您可以插入表情图标，键入 <b>:表情符号</b>。例如： <b>':+1'</b><br>"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/js/tour.js:24
+#, python-format
+msgid ""
+"Once a message has been starred, you can come back and review it at any time"
+" here."
+msgstr ""
+"当消息'标星收藏'后，您可以随时再次查阅。"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/js/chat_manager.js:520
+#, python-format
+msgid "Unsubscribed"
+msgstr "已退出"

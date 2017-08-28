@@ -7,7 +7,11 @@
             </t>
         </t>
     </t>
+
+    <!--To solve emoji button not working issue in the channel editor-->
+    <t t-extend="mail.ChatComposer">
+        <t t-jquery="button[tabindex='4']" t-operation="replace">
+            <a tabindex="4" class="btn btn-sm btn-icon fa fa-smile-o o_composer_button_emoji" type="button" data-toggle="popover"/>
+        </t>
+    </t>
 </templates>
-
-
-
